@@ -3,5 +3,5 @@ plugins {
 }
 
 dependencies {
-  compile files("C:\\robocode\\libs\\robocode.jar")
+  compile files(System.getenv("ROBOCODE_DIR") + "\\libs\\robocode.jar")
 }
