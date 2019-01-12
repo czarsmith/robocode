@@ -11,17 +11,17 @@ import robocode.HitByBulletEvent;
 import robocode.HitRobotEvent;
 import robocode.RobotDeathEvent;
 import robocode.ScannedRobotEvent;
-import smi.robots.lib.firepower.LeadSlingerPower;
-import smi.robots.lib.guns.GunController;
-import smi.robots.lib.guns.LeadSlingerGunController;
-import smi.robots.lib.intel.RobotManager;
-import smi.robots.lib.radar.Radar;
-import smi.robots.lib.radar.WideLock;
-import smi.robots.lib.targetselection.NearestNeighbor;
-import smi.robots.lib.targetselection.TargetSelection;
-import smi.robots.lib.wheels.LeadSlingerWheel;
-import smi.robots.lib.wheels.SimpleWheelController;
-import smi.robots.lib.wheels.WheelController;
+import smi.robots.dad.lib.firepower.LeadSlingerPower;
+import smi.robots.dad.lib.guns.GunController;
+import smi.robots.dad.lib.guns.LeadSlingerGunController;
+import smi.robots.dad.lib.intel.RobotManager;
+import smi.robots.dad.lib.radar.Radar;
+import smi.robots.dad.lib.radar.WideLock;
+import smi.robots.dad.lib.targetselection.NearestNeighbor;
+import smi.robots.dad.lib.targetselection.TargetSelection;
+import smi.robots.dad.lib.wheels.LeadSlingerWheel;
+import smi.robots.dad.lib.wheels.SimpleWheelController;
+import smi.robots.dad.lib.wheels.WheelController;
 
 /**
  * This robot was built for the Millard West High School Skills challenge.

@@ -1,4 +1,4 @@
-package smi.robots;
+package smi.robots.dad;
 
 import java.awt.Color;
 
@@ -12,20 +12,17 @@ import robocode.HitRobotEvent;
 import robocode.RobotDeathEvent;
 import robocode.ScannedRobotEvent;
 import smi.robots.dad.lib.firepower.ConstantHitPercent;
-import smi.robots.dad.lib.firepower.FirePower;
+import smi.robots.dad.lib.guns.BestGunController;
 import smi.robots.dad.lib.guns.GunController;
-import smi.robots.dad.lib.guns.SimpleGunController;
-import smi.robots.dad.lib.guns.guessfactor.GuessFactor;
 import smi.robots.dad.lib.intel.RobotManager;
 import smi.robots.dad.lib.radar.LockAndSpin;
 import smi.robots.dad.lib.radar.Radar;
+import smi.robots.dad.lib.targetselection.NearestNeighbor;
 import smi.robots.dad.lib.targetselection.TargetSelection;
-import smi.robots.dad.lib.targetselection.WeakestNeighbor;
-import smi.robots.dad.lib.wheels.HeadOnBulletDodger;
-import smi.robots.dad.lib.wheels.SimpleWheelController;
+import smi.robots.dad.lib.wheels.BestWheelController;
 import smi.robots.dad.lib.wheels.WheelController;
 
-public class Ann extends AdvancedRobot {
+public class TestBot extends AdvancedRobot {
     private WheelController wheelController;
     private GunController gunController;
     private Radar radar;
@@ -33,16 +30,16 @@ public class Ann extends AdvancedRobot {
 
     @Override
     public void run() {
-        setColors(Color.PINK, Color.RED, Color.PINK);
+        setColors(Color.BLACK, Color.YELLOW, Color.BLACK);
         setBulletColor(Color.ORANGE);
 
         RobotManager.reset();
 
-        wheelController = new SimpleWheelController(this, new HeadOnBulletDodger(this));
-        FirePower fp = new ConstantHitPercent(this, 1, 4, 3);
-        gunController = new SimpleGunController(this, fp, new GuessFactor(this, fp));
-        radar = new LockAndSpin(this);
-        targetSelection = new WeakestNeighbor(this, 1.3);
+        wheelController = new BestWheelController(this);
+        gunController = new BestGunController(this,
+            new ConstantHitPercent(this, 1, 4, 3));
+        radar = new LockAndSpin(this, 45);
+        targetSelection = new NearestNeighbor(this, 1.3);
 
         while(true) {
             RobotManager.doTurn(this);
