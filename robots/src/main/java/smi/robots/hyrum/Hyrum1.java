@@ -1,4 +1,4 @@
-package smi.robots;
+package smi.robots.hyrum;
 
 import java.awt.Color;
 
