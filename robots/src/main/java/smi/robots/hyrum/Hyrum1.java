@@ -12,12 +12,12 @@ public class Hyrum1 extends Robot {
     setBulletColor(Color.MAGENTA);
 
     while (true) {
-      ahead(100);
+      turnGunRight(360);
     }
   }
   
   @Override
   public void onScannedRobot(ScannedRobotEvent event) {
-    fire(3);
+    fire(3); turnGunLeft(10); turnGunRight(10); turnGunLeft(10); turnGunLeft(10); turnGunRight(10); turnGunLeft(10); 
   }
 }

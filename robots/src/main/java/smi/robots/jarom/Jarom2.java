@@ -12,16 +12,17 @@ public class Jarom2 extends Robot {
     setBulletColor(Color.WHITE);
 
     while (true) {
-      ahead(100);
-      back(90);
-      turnRight(180);
-      turnLeft(80);
-      turnGunLeft(100);
-      back(90);
-      ahead(100);
-      turnGunRight(380);
-      ahead(100);turnGunRight(120);
-      back(380);
+      ahead(100)
+      turngunleft(360)
+      
+      
+     
+     
+      
+      
+      
+      
+      
       
       
       
@@ -30,8 +31,8 @@ public class Jarom2 extends Robot {
   
   @Override
   public void onScannedRobot(ScannedRobotEvent event) {
+    fire(3);
     fire(2);
-     
     
   }
 }

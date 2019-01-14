@@ -4,45 +4,44 @@ import java.awt.Color;
 
 import robocode.HitByBulletEvent;
 import robocode.HitRobotEvent;
+import robocode.HitWallEvent;
 import robocode.Robot;
 import robocode.Rules;
 import robocode.ScannedRobotEvent;
 
 public class HyrumRobotOne extends Robot {
+	private double direction = 1;
 	public void run() {	
-		setBulletColor(Color.GREEN);
+		setBulletColor(Color.MAGENTA);
 	    setBodyColor(Color.RED);
 	    setRadarColor(Color.BLACK);
 	    setScanColor(Color.RED);
-	    turnGunRight(360);
 		while (true) { 
-			turnRight(90);
 			turnGunRight(360);
+			ahead(300);
 			turnGunRight(360);
-			ahead(100);
-			turnGunRight(360);
+			back(300);
+			
+			
 			
 		}   
 	}
 
 	public void onScannedRobot(ScannedRobotEvent e) {
-		fire(2); turnGunRight(0);
-		
-		
-		
+        fire(3);	turnGunLeft(10); turnGunRight(10); turnGunLeft(10); turnGunRight(10);  
 	} 
+	
 	public void onHitByBullet(HitByBulletEvent event) {
-		turnRight(90);
-		back(100);
+	    
 	}
 
-    public void onHitRobot(HitRobotEvent event) {
-        
-        
-
-    }
-
 }
+        
+        
+
+    
+
+
    
     	
     
