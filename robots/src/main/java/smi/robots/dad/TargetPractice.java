@@ -5,15 +5,15 @@ import robocode.Robot;
 import robocode.ScannedRobotEvent;
 
 public class TargetPractice extends Robot {
-	private double direction = 1;
+	private double travel = 105;
 
 	public void run() {
 		while (true) {
-			ahead(105 * direction);
+			ahead(travel);
 			turnGunRight(370);
 		}
 	}
 	
-	public void onHitWall(HitWallEvent e) { direction *= -1; }
+	public void onHitWall(HitWallEvent e) { travel *= -1; }
 	public void onScannedRobot(ScannedRobotEvent e) {	fire(3); }
 }
