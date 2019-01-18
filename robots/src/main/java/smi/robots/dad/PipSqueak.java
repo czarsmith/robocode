@@ -29,6 +29,6 @@ public class PipSqueak extends Robot {
     }
     turnGunRight(gunDir * radarLockAngle);
     gunDir *= -1;
-    turnRight(Utils.normalRelativeAngleDegrees(e.getBearing() - 90 + 20 * dir));
+    turnRight(Utils.normalRelativeAngleDegrees(e.getBearing() - 90 + 35 * dir));
   }
 }
