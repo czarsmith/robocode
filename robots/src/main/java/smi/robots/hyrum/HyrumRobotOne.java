@@ -8,27 +8,26 @@ import robocode.HitWallEvent;
 import robocode.Robot;
 import robocode.Rules;
 import robocode.ScannedRobotEvent;
+import robocode.util.Utils;
 
 public class HyrumRobotOne extends Robot {
 	private double direction = 1;
 	public void run() {	
 		setBulletColor(Color.MAGENTA);
-	    setBodyColor(Color.RED);
-	    setRadarColor(Color.BLACK);
+	    setBodyColor(new Color(10, 0, 10 ));
+	    setRadarColor(new Color(10, 0, 10 ));
 	    setScanColor(Color.RED);
+	    setGunColor(new Color(10, 0, 10 ));
 		while (true) { 
+		    ahead(75);
+			back(75);
 			turnGunRight(360);
-			ahead(300);
-			turnGunRight(360);
-			back(300);
-			
-			
 			
 		}   
 	}
 
 	public void onScannedRobot(ScannedRobotEvent e) {
-        fire(3);	turnGunLeft(10); turnGunRight(10); turnGunLeft(10); turnGunRight(10);  
+		  fire(3);  turnRight(Utils.normalRelativeAngleDegrees(e.getBearing() - 90));   
 	} 
 	
 	public void onHitByBullet(HitByBulletEvent event) {
@@ -37,15 +36,7 @@ public class HyrumRobotOne extends Robot {
 
 }
         
-        
-
-    
-
-
-   
-    	
-    
-
+     
 
 
 

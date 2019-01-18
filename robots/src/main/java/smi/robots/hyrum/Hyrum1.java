@@ -1,7 +1,6 @@
 package smi.robots.hyrum;
 
 import java.awt.Color;
-
 import robocode.Robot;
 import robocode.ScannedRobotEvent;
 
@@ -16,8 +15,10 @@ public class Hyrum1 extends Robot {
     }
   }
   
-  @Override
-  public void onScannedRobot(ScannedRobotEvent event) {
-    fire(3); turnGunLeft(10); turnGunRight(10); turnGunLeft(10); turnGunLeft(10); turnGunRight(10); turnGunLeft(10); 
+  public void onScannedRobot(ScannedRobotEvent e) {
+	  fire(3); turnGunLeft(10); turnGunRight(10); turnGunLeft(10); turnGunRight(10); turnGunLeft(10); turnGunRight(10); turnGunLeft(10); turnGunRight(10);
+	  
   }
 }
+  
+ 
