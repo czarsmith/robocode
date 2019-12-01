@@ -41,7 +41,8 @@ public class AppMain {
   }
 
   private void go() throws IOException {
-    Arrays.asList("ch", "ew", "fc", "gr", "hh", "lv", "ml", "rb", "rv").stream()
+    Arrays.asList("2854949-ch", "220426-ew", "2122022-fc", "530867-gr", "2122014-hh",
+        "485322-lv", "130710-ml", "94153-rb", "2143534-rv").stream()
       .flatMap(this::readHouseholds)
       .forEach(this::printHousehold);    
   }
@@ -63,6 +64,7 @@ public class AppMain {
         List<String> parts = new ArrayList<>();
         parts.add(getUnitName(person.getUnitNumber()));
         parts.add("");
+        parts.add("");
         parts.add(person.getSurname());
         parts.add(person.getGivenName());
         parts.add(StringUtils.defaultString(StringUtils.defaultString(person.getEmail(), h.getEmail())));
@@ -73,6 +75,7 @@ public class AppMain {
       else {
         for (Position position : ListUtils.emptyIfNull(person.getPositions())) {
           List<String> parts = new ArrayList<>();
+          parts.add(getUnitName(person.getUnitNumber()));
           parts.add(getUnitName(position.getUnitNumber()));
           parts.add(position.getPositionTypeName());
           parts.add(person.getSurname());
